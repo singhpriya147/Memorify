@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-API_USER='http://localhost:5000/api/users/'
+const API_USER='http://localhost:5000/api/users/'
 
 // This code defines a JavaScript function register that sends a POST request to an API endpoint /api/users/ using the axios library. The function takes an argument userData
 // (dispatch(register(userData))
