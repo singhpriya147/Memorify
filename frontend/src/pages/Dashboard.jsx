@@ -180,10 +180,10 @@ function Dashboard() {
                   ))}
                 </Box>
               ) : (
-                <Typography>no user available to follow</Typography>
+                <Typography>Loading...</Typography>
               )
             ) : (
-              <Typography>Loading...</Typography>
+              <Typography>no user available to follow</Typography>
             )}
           </Box>
         </Box>
@@ -205,10 +205,12 @@ function Dashboard() {
           <Box>
             <PostForm />
             <Box
-              sx={{
-                // bgcolor: 'green',
-                //  display: { xs: 'none', md: 'block' }
-              }}
+              sx={
+                {
+                  // bgcolor: 'green',
+                  //  display: { xs: 'none', md: 'block' }
+                }
+              }
             >
               {user ? (
                 <MyProfile
