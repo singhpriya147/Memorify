@@ -8,5 +8,7 @@ Memorify is a social media web application built using the MERN (MongoDB, Expres
 Memorify allows users to sign up, log in, and manage their profiles securely. User data is stored in MongoDB, and password encryption ensures data privacy.
 - **Post Creation and Interaction:**
 Users can create, edit, and delete posts. They can also like, comment, and share posts from other users, fostering meaningful interactions within the community.
-- **Friendship Management:**
-Memorify enables users to send friend requests, accept or decline them, and manage their friend lists, enhancing the sense of community and connectedness.
+- **Dynamic Posts Feed**
+The Memorify offers users a dynamic feed that aggregates and displays posts from all the people they follow. The feed provides a real-time and personalized experience, presenting content in chronological order, ensuring users never miss updates from their connections.
+- **Follow and Unfollow Functionality**
+Users have the ability to follow and unfollow other users within the platform. By following others, they opt-in to receive updates from those accounts in their news feed, while unfollowing will remove the account's posts from their feed.
