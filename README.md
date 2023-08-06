@@ -40,3 +40,22 @@ The project leverages a modern and efficient tech stack, with Redux Toolkit as t
 
   -  **Security Measures**: The project incorporates security best practices, such as password hashing, data encryption, and implementing proper authentication and authorization mechanisms.
   -  **Deployment and Hosting**: The application is deployed and hosted on a cloud platform render ensuring scalability and reliability.
+    
+## Usage
+
+When you access the project by following the provided link, you will be directed to the login page of our social media web application. Here's a step-by-step guide on how to use the project:
+
+1- **Login or Register :** If you are an existing user, simply enter your registered email and password to log in. For new users, click on the "Register" link to create a new account.
+
+2- **Explore the Feed :** Once logged in, you will be redirected to your personalized feed, which displays posts from users you follow. Engage with posts by liking, commenting.
+
+3- **Post Creation :** Create your own posts by clicking on the "Create Post" button. Add text, images, or videos to share your thoughts and experiences with your followers.
+
+4- **Profile Management :** Click on the 'Update Profile' button located on the left side of your profile section. Here, you can conveniently update your profile information, including your name, profile picture, occupation, and location. Additionally, if you wish to change your password, you can click on the 'Update Password' button, which will prompt you to provide your current password and set a new one securely.
+
+5- **Edit and Delete Posts**: In the "My Posts" section, you can view all the posts you've created. To make changes, click on the "Edit" icon to modify the content or  "Delete" icon to remove a post.
+
+6- **Discover People**: Utilize the suggestion section  to find other users, Discover new connections based on shared interests or mutual friends.
+
+7-**Logout**: When you are done using the application, click on the "Logout" button to securely log out of your account
+ 
