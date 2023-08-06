@@ -43,7 +43,7 @@ The project leverages a modern and efficient tech stack, with Redux Toolkit as t
     
 ## Usage
 
-When you access the project by following the provided link, you will be directed to the login page of our social media web application. Here's a step-by-step guide on how to use the project:
+When you access the project by following the provided link, you will be directed to the login page of our Memorify web application. Here's a step-by-step guide on how to use the project:
 
 1- **Login or Register :** If you are an existing user, simply enter your registered email and password to log in. For new users, click on the "Register" link to create a new account.
 
