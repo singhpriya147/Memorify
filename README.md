@@ -24,3 +24,18 @@ The Memorify includes a feature that allows users to manage their own posts effe
 The Memorify includes a secure password update feature that enables users to change their account passwords. Users can update their password by providing their old password along with the new password they wish to set.
 Profile Update - The project includes a comprehensive profile update feature that empowers users to manage and customize their profile information.
 Users can update various fields in their profile, such as name, profile picture, location, and other relevant personal information.
+
+## Tech Stack:
+     The project leverages a modern and efficient tech stack, with Redux Toolkit as the state management solution, ensuring a seamless and robust user experience. The following technologies are employed
+
+  -  **Front-end**:The user interface is built using React.js, a powerful and popular JavaScript library known for its component-based architecture and reusability. Redux Toolkit is employed as the state management library to manage the application's global state effectively.
+
+  -  **Back-end**: The server-side is powered by Node.js and Express.js, handling API requests and business logic. MongoDB serves as the database to store user information, posts, and other relevant data.
+
+  -   **Database**: The project utilizes MongoDB, a NoSQL database, for storing and managing user information, posts, and other relevant data.
+
+
+  - **Styling**: For styling, the project employs CSS and may utilize UI libraries like Material-UI for a consistent and visually appealing design.
+
+  -  **Security Measures**: The project incorporates security best practices, such as password hashing, data encryption, and implementing proper authentication and authorization mechanisms.
+  -  **Deployment and Hosting**: The application is deployed and hosted on a cloud platform render ensuring scalability and reliability.
