@@ -5,4 +5,5 @@ Memorify is a social media web application built using the MERN (MongoDB, Expres
 **LIVE LINK :** https://memorify.onrender.com
 ## Features
 - **User Authentication and Authorization**
+
 Memorify allows users to sign up, log in, and manage their profiles securely. User data is stored in MongoDB, and password encryption ensures data privacy.
