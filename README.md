@@ -26,7 +26,8 @@ Profile Update - The project includes a comprehensive profile update feature tha
 Users can update various fields in their profile, such as name, profile picture, location, and other relevant personal information.
 
 ## Tech Stack:
-     The project leverages a modern and efficient tech stack, with Redux Toolkit as the state management solution, ensuring a seamless and robust user experience. The following technologies are employed
+
+The project leverages a modern and efficient tech stack, with Redux Toolkit as the state management solution, ensuring a seamless and robust user experience. The following technologies are employed
 
   -  **Front-end**:The user interface is built using React.js, a powerful and popular JavaScript library known for its component-based architecture and reusability. Redux Toolkit is employed as the state management library to manage the application's global state effectively.
 
