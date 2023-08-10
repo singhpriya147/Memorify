@@ -58,4 +58,43 @@ When you access the project by following the provided link, you will be directed
 6- **Discover People**: Utilize the suggestion section  to find other users, Discover new connections based on shared interests or mutual friends.
 
 7-**Logout**: When you are done using the application, click on the "Logout" button to securely log out of your account
+
  
+## Installation
+
+**Step-1 Clone the Repository**
+
+1-Open your terminal/command prompt.
+2-Navigate to the directory where you want to store the project.
+
+3-Run the following command to clone the repository:
+```bash
+git clone https://github.com/singhpriya147/Memorify.git
+```
+4-Navigate to the project directory:
+
+```bash
+cd Memorify
+```
+**Step-2 Set Up Backend (Node.js and Express)**
+
+1-Navigate to the backend directory:
+```bash
+cd backend
+```
+2-Install backend dependencies:
+```bash
+npm install
+```
+3-Create a .env file in the backend directory and set up environment variables, such as MongoDB connection URI, JWT secret, etc.
+
+**Step-3 Set Up Frontend**
+
+1-Navigate to the frontend directory:
+```bash
+cd ../frontend
+```
+2-Install frontend dependencies:
+```bash
+npm install
+```
