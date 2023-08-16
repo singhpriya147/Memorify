@@ -46,7 +46,8 @@ export default function PostItem({ post }) {
 const [editCaptionToggle, setEditCaptionToggle] = useState(false);
 
   const dispatch = useDispatch();
-
+const API_POST = 'https://memorify.onrender.com/api/posts';
+const API_USER = 'https://memorify.onrender.com/api/users';
   const userId = user._id;
   const token = user.token;
   // console.log("logged in user userId")
@@ -56,7 +57,8 @@ const [editCaptionToggle, setEditCaptionToggle] = useState(false);
   const handleLike = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/posts/${post._id}`,
+        // `http://localhost:5000/api/posts/${post._id}`,
+        API_POST+ `${post._id}`,
         {
           method: 'GET',
           headers: {
@@ -78,7 +80,7 @@ const [editCaptionToggle, setEditCaptionToggle] = useState(false);
   const handleUnlike = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/posts/${post._id}`,
+        API_POST+`${post._id}`,
         {
           method: 'GET',
           headers: {
@@ -139,7 +141,8 @@ const [editCaptionToggle, setEditCaptionToggle] = useState(false);
 
 
   try {
-      const res = await fetch(`http://localhost:5000/api/users/${post.user}`, {
+      // const res = await fetch(`http://localhost:5000/api/users/${post.user}`, {
+      const res = await fetch(API_USER+`${post.user}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
