@@ -1,7 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import authService from './authService';
 // async thunk function -that deal with async data backend
-
+// const API_USER='http://localhost:5000/api/users/'
+const API_USER = 'https://memorify.onrender.com/api/users/';
 // Get user which contain basic user data and a token  from localStorage
 const user = JSON.parse(localStorage.getItem('user'));
 
@@ -50,7 +51,8 @@ export const getUser=createAsyncThunk('auth/getUser',async(id,thunkAPI)=>{
   try {
     const token = thunkAPI.getState().auth.user.token;
     // console.log(token);
-     const response = await fetch(`http://localhost:5000/api/users/${id}`, {
+    //  const response = await fetch(`http://localhost:5000/api/users/${id}`, {
+     const response = await fetch(API_USER +`${id}`, {
        method: 'GET',
        headers: {
          'Content-Type': 'application/json',
@@ -81,8 +83,9 @@ export const getUser=createAsyncThunk('auth/getUser',async(id,thunkAPI)=>{
 
 
       
-     const response = await fetch(`http://localhost:5000/api/users`, {
-       //  const response = await fetch(`process.env.BASE_URL/api/users`, {
+    //  const response = await fetch(`http://localhost:5000/api/users`, {
+     const response = await fetch(API_USER, {
+
        method: 'GET',
        headers: {
          Authorization: `Bearer${token}`,
@@ -111,14 +114,21 @@ export const updateProfile = createAsyncThunk(
       
      const token = thunkAPI.getState().auth.user.token;
       const response = await fetch(
-        `http://localhost:5000/api/users/update/profile`,
+        // `http://localhost:5000/api/users/update/profile`,
+        API_USER+'update/profile',
         {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`,
           },
-          body: JSON.stringify({ name: name, email: email,location:location,occupation:occupation,profilePicture:profilePicture }),
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            location: location,
+            occupation: occupation,
+            profilePicture: profilePicture,
+          }),
         }
       );
 
@@ -144,7 +154,8 @@ export const updatePassword=createAsyncThunk('auth/updatePassword',async({oldPas
   try {
     const token=thunkAPI.getState().auth.user.token;
     const response = await fetch(
-      `http://localhost:5000/api/users/update/password`,
+      // `http://localhost:5000/api/users/update/password`,
+     API_USER+'update/password',
       {
         method: 'PUT',
         headers: {
