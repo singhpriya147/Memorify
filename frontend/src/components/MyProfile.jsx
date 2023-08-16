@@ -29,7 +29,8 @@ function MyProfile({userId,token}) {
   );
 
   // const id=user._id;
- 
+ const API_USER = 'https://memorify.onrender.com/api/users';
+   
 
 
 
@@ -56,7 +57,7 @@ function MyProfile({userId,token}) {
 
  
    const getData = async()=>{
-    const res = await fetch(`http://localhost:5000/api/users/${userId}`, {
+    const res = await fetch(API_USER+`${userId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
