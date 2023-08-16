@@ -16,7 +16,7 @@ const token =user.token;
  const [newPassword,setNewPassword]=useState();
  const dispatch=useDispatch();
  const navigate= useNavigate();
-
+const API_USER = 'https://memorify.onrender.com/api/users/';
 
 
  const submitHandler=async(e)=>{
@@ -38,7 +38,7 @@ await dispatch(updatePasswordfunc(oldPassword, newPassword, token));
  const updatePasswordfunc = async (oldPassword, newPassword, token) => {
    try {
      const response = await fetch(
-       'http://localhost:5000/api/users/update/password',
+       API_USER+'update/password',
        {
          method: 'PUT',
          headers: {
