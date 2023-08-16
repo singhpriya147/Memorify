@@ -24,7 +24,7 @@ function UserItem({person})
  
   const token = user.token;
   // console.log(user._id);
-
+const API_USER = 'https://memorify.onrender.com/api/users/';
  
 const [isFollowing, setIsFollowing] = useState(false);
 const [buttonLabel,setButtonLabel]=useState("Follow");
@@ -35,7 +35,7 @@ const [buttonLabel,setButtonLabel]=useState("Follow");
 
    const TofollowUser=async()=>{
     const res = await fetch(
-      `http://localhost:5000/api/users/follow/${person._id}`,
+      API_USER+`follow/${person._id}`,
       { method:'PUT',
         headers: {
           Accept:'application/json',
@@ -52,7 +52,7 @@ const [buttonLabel,setButtonLabel]=useState("Follow");
    }
  const ToUnfollowUser = async () => {
    const res = await fetch(
-     `http://localhost:5000/api/users/unfollow/${person._id}`,
+     API_USER+`unfollow/${person._id}`,
      {
        method: 'PUT',
        headers: {
