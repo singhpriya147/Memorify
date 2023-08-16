@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import postService from './postService'
-const API_URL = 'http://localhost:5000/api/posts';
+// const API_URL = 'http://localhost:5000/api/posts';
+const API_URL = 'https://memorify.onrender.com/api/posts';
 const initialState={
  posts:[],
  isError:false,
