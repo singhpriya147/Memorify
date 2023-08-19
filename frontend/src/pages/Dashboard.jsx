@@ -18,7 +18,7 @@ import { getUser } from '../features/auth/authSlice';
 // import { Container } from '@mui/material';
 
 import UserItem from '../components/UserItem'
-import FlexBetween from '../components/FlexBetween';
+
 function Dashboard() {
   const navigate = useNavigate();
   const dispatch = useDispatch();

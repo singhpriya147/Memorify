@@ -11,7 +11,7 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
 import { getUser, updateProfile} from '../features/auth/authSlice';
-import FlexBetween from './FlexBetween';
+
 import { Box } from '@material-ui/core';
 
 

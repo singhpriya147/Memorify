@@ -13,7 +13,7 @@ import Button from '@mui/material/Button';
 import { Box, Container } from '@material-ui/core';
 import {createPost} from '../features/Posts/postSlice'
 import{useState} from 'react'
-import FlexBetween from './FlexBetween';
+
 
 
 
