@@ -35,12 +35,13 @@ const [buttonLabel,setButtonLabel]=useState("Follow");
 
    const TofollowUser=async()=>{
     const res = await fetch(
-      API_USER+`follow/${person._id}`,
-      { method:'PUT',
+      API_USER  +'follow ' + '/' + `${person._id}`,
+      {
+        method: 'PUT',
         headers: {
-          Accept:'application/json',
-         'Content-Type':'application/json',
-         Authorization: `Bearer ${token}`,
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
         },
       }
     );
@@ -51,17 +52,14 @@ const [buttonLabel,setButtonLabel]=useState("Follow");
      
    }
  const ToUnfollowUser = async () => {
-   const res = await fetch(
-     API_USER+`unfollow/${person._id}`,
-     {
-       method: 'PUT',
-       headers: {
-         Accept: 'application/json',
-         'Content-Type': 'application/json',
-         Authorization: `Bearer ${token}`,
-       },
-     }
-   );
+   const res = await fetch(API_USER +' unfollow '+'/'+ `${person._id}`, {
+     method: 'PUT',
+     headers: {
+       Accept: 'application/json',
+       'Content-Type': 'application/json',
+       Authorization: `Bearer ${token}`,
+     },
+   });
    const data = await res.json();
   //  console.log(data);
    setIsFollowing(false);
