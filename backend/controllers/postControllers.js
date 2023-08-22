@@ -37,30 +37,45 @@ const getUserPosts=asyncHandler(async(req,res)=>{
 
 
  const createPost= asyncHandler(async(req, res) => {
- const { title, message,location, selectedFile,  createdAt } =
+ const { title, message,location, selectedFile } =
    req.body;
 
 if(!req.body){
   res.status(400).json({message:'please add all infomation'})
 }
 
-  const user = req.user._id;
-  const loggedInUserName = req.user.name;
-
+  // const user = req.user._id;
+  // const loggedInUserName = req.user.name;
 
  const newPostMessage = await PostMessage.create({
    title: req.body.title,
    message: req.body.message,
    selectedFile: req.body.selectedFile,
-
-   user: loggedInUserName,
+  //  creators: req.body.creators,
+  //  tags: req.body.tags,
+   user: req.user.id,
+  //  fav: req.user.fav,
  });
 
- 
+const user=await User.findById(req.user._id);
  user.posts.push(newPostMessage._id);
  await user.save();
- 
+  //  console.log(req.body.selectedFile);
    res.status(200).json(newPostMessage);
+  
+ // const newPostMessage = await PostMessage.create({
+ //   title: req.body.title,
+ //   message: req.body.message,
+ //   selectedFile: req.body.selectedFile,
+
+ //   user: loggedInUserName,
+ // });
+
+ 
+ // user.posts.push(newPostMessage._id);
+ // await user.save();
+ 
+ //   res.status(200).json(newPostMessage);
  });
 
 
