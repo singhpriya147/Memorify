@@ -28,11 +28,11 @@ const classes=useStyles()
   message: '',
   selectedFile:'',
    location:'',
-   owner:''
+ 
    });
 
 
-const {  title, message, selectedFile,location,owner} =
+const {  title, message, selectedFile,location} =
   postData;
 
 const dispatch=useDispatch()
@@ -59,7 +59,7 @@ const Data = {
 
   title,
   message,
-  owner:user.name,
+  // owner:user.name,
   selectedFile,
   
   location,
@@ -75,7 +75,7 @@ const Data = {
     message: '',
     selectedFile: '',
     location:'',
-    owner:""
+    // owner:""
   });
 };
 
