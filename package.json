@@ -8,7 +8,7 @@
     "server": "nodemon backend/server.js",
     "client": "npm start --prefix ./frontend",
     "dev": "concurrently \"npm start\" \"npm run client\"",
-     "build": "react-scripts build"
+    "build": "react-scripts build"
   },
   "author": "priya singh",
   "license": "MIT",
@@ -26,12 +26,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/singhpriya147/memories.git"
+    "url": "git+https://github.com/singhpriya147/Memorify.git"
   },
   "bugs": {
-    "url": "https://github.com/singhpriya147/memories/issues"
+    "url": "https://github.com/singhpriya147/Memorify/issues"
   },
-  "homepage": "https://github.com/singhpriya147/memories#readme",
+  "homepage": "https://github.com/singhpriya147/Memorify#readme",
   "devDependencies": {
     "nodemon": "^3.0.1"
   }
