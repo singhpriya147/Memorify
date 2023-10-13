@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { reset,register } from '../features/auth/authSlice'
 import './Register.css'
 import FileBase from 'react-file-base64';
-
+import heroImage from './hero.png';
 
 
 function Register() {
@@ -63,87 +63,103 @@ useEffect(() => {
   return (
     <>
       <div className='container'>
-        <div className='header'>
-          <h1>registration </h1>
-          <p>please register yourself</p>
-        </div>
-        {/* form section */}
-        <form className='form' onSubmit={handleSubmit}>
-          <div>
-            <input
-              type='name'
-              id='name'
-              name='name'
-              value={name}
-              placeholder='enter your name'
-              onChange={onChange}
-            />
-          </div>
-         
-          <div>
-            <input
-              type='email'
-              id='email'
-              name='email'
-              value={email}
-              placeholder='enter your email'
-              onChange={onChange}
-            />
-          </div>
-          <div>
-            <input
-              type='password'
-              id='password'
-              name='password'
-              value={password}
-              placeholder='password'
-              onChange={onChange}
-            />
-          </div>
-          <div>
-            <input
-              type='password'
-              id='password2'
-              name='password2'
-              value={password2}
-              placeholder='confirm password'
-              onChange={onChange}
-            />
-          </div>
-          <div>
-            <input
-              type='text'
-              id='location'
-              name='location'
-              value={location}
-              placeholder='your location'
-              onChange={onChange}
-            />
-          </div>
-          <div>
-            <input
-              type='text'
-              id='occupation'
-              name='occupation'
-              value={occupation}
-              placeholder='your occupation'
-              onChange={onChange}
-            />
-          </div>
-          <div>
-            <h3> Add your profile picture</h3>
-            <FileBase
-              type='file'
-              multiple={false}
-              placeholder='profile picture'
-              onDone={({ base64 }) =>
-                setFormData({ ...formData, profilePicture: base64 })
-              }
-            />
+        <div className='left-container'>
+          <div className='hero-text'>
+            <h1 className='custom-font'>Memorify </h1>
+            <p>Capture Moments, Share Memories.</p>
           </div>
 
-          <button type='submit' className='btn'>Submit</button>
-        </form>
+          <div className='hero-image'>
+            <img src={heroImage} alt='' />
+          </div>
+        </div>
+
+        <div className='right-container'>
+          <div className='register-header'>
+            <h1>Sign Up </h1>
+            <p>please register yourself</p>
+          </div>
+          <form className='form' onSubmit={handleSubmit}>
+            <div>
+              <input
+                type='name'
+                id='name'
+                name='name'
+                value={name}
+                placeholder='Enter your name'
+                onChange={onChange}
+              />
+            </div>
+
+            <div>
+              <input
+                type='email'
+                id='email'
+                name='email'
+                value={email}
+                placeholder='Enter your email'
+                onChange={onChange}
+              />
+            </div>
+            <div>
+              <input
+                type='password'
+                id='password'
+                name='password'
+                value={password}
+                placeholder='password'
+                onChange={onChange}
+              />
+            </div>
+            <div>
+              <input
+                type='password'
+                id='password2'
+                name='password2'
+                value={password2}
+                placeholder='confirm password'
+                onChange={onChange}
+              />
+            </div>
+            <div>
+              <input
+                type='text'
+                id='location'
+                name='location'
+                value={location}
+                placeholder='your location'
+                onChange={onChange}
+              />
+            </div>
+            <div>
+              <input
+                type='text'
+                id='occupation'
+                name='occupation'
+                value={occupation}
+                placeholder='your occupation'
+                onChange={onChange}
+              />
+            </div>
+            <div>
+              <h3> Add your profile picture</h3>
+              <FileBase
+                type='file'
+                multiple={false}
+                placeholder='profile picture'
+                onDone={({ base64 }) =>
+                  setFormData({ ...formData, profilePicture: base64 })
+                }
+              />
+            </div>
+
+            <button type='submit' className='button'>
+              Submit
+            </button>
+          </form>
+        </div>
+
+        
       </div>
     </>
   );
