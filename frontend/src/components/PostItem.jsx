@@ -160,14 +160,19 @@ const API_USER = 'https://memorify.onrender.com/api/users';
     getUserData();
   }, [post.user, token]);
 
-
+const cardStyle = {
+  width: 650, // Set your desired width
+  height: 500, // Set your desired height
+  // You can also set other CSS properties like overflow and max-width to control the image inside the card
+};
   return (
     <Box>
       <Card
-        sx={{
-          mb: '1vmax',
-          boxShadow: '3',
-        }}
+        // sx={{
+        //   mb: '1vmax',
+        //   boxShadow: '3',
+        // }}
+        sx={cardStyle}
       >
         <CardHeader title={post.title} subheader={owner} />
         <Typography variant='subheader' color='text.secondary'>
@@ -179,9 +184,12 @@ const API_USER = 'https://memorify.onrender.com/api/users';
         </Typography>
         <CardMedia
           component='img'
-          sx={{ heigth: 100 }}
+          // sx={{ heigth: 100 }}
           image={post.selectedFile}
           alt={post.title}
+          // height='100%'
+          // width='100%'
+          sx={{ height: '50%', objectFit: 'contain' }}
         />
         <CardContent>
           <Typography variant='body2' color='text.secondary'>
@@ -199,7 +207,6 @@ const API_USER = 'https://memorify.onrender.com/api/users';
           </div>
 
           <div className='post-footer'>
-            
             <ChatBubbleOutline
               onClick={() => setCommentToggle(!commentToggle)}
             />
@@ -262,13 +269,13 @@ const API_USER = 'https://memorify.onrender.com/api/users';
           {/*  post's userid is same as login id then show delete otherwise dont  */}
 
           {user._id === post.user ? (
-            <div className="post-footer">
+            <div className='post-footer'>
               <DeleteIcon onClick={() => dispatch(deletePost(post._id))} />
             </div>
           ) : null}
 
           {user._id === post.user ? (
-            <div className="post-footer" >
+            <div className='post-footer'>
               <EditIcon
                 onClick={() => setEditCaptionToggle(!editCaptionToggle)}
               />
