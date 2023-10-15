@@ -57,7 +57,7 @@ const Login = () => {
     <div className='container'>
       <div className='left-container'>
         <div className='hero-text'>
-          <h1 className='custom-font'> HI Memorify </h1>
+          <h1 className='custom-font'> Memorify </h1>
           <p>Capture Moments, Share Memories.</p>
         </div>
 
