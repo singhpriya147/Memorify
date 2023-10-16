@@ -166,7 +166,7 @@ const cardStyle = {
   // You can also set other CSS properties like overflow and max-width to control the image inside the card
 };
   return (
-    <Box>
+    <Box sx={ {paddingBottom: '2rem'} }>
       <Card
         // sx={{
         //   mb: '1vmax',

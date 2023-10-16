@@ -40,7 +40,7 @@ function MyPosts() {
     <Header/>
       <Box sx={{ padding: '3rem', width: 500, alignContent: 'center' }}>
         {posts.length > 0 ? (
-          <Box sx={{ width: 500, height: 300 }}>
+          <Box sx={{ width: 500, height: 300}}>
             {posts.map((post) => (
               <PostItem key={post._id} post={post} />
             ))}
