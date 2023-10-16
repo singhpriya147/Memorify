@@ -161,9 +161,9 @@ const API_USER = 'https://memorify.onrender.com/api/users';
   }, [post.user, token]);
 
 const cardStyle = {
-  width: 650, // Set your desired width
-  height: 400, // Set your desired height
-  // You can also set other CSS properties like overflow and max-width to control the image inside the card
+  width: 650, 
+  height: 400,
+  
 };
   return (
     <Box sx={ {paddingBottom: '2rem'} }>
