@@ -137,7 +137,7 @@ const API_USER = 'https://memorify.onrender.com/api/users';
 
 
 
-  const getUserData = async () => {
+  const getUserName = async () => {
 
 
   try {
@@ -158,7 +158,7 @@ const API_USER = 'https://memorify.onrender.com/api/users';
 
   };
   useEffect(() => {
-    getUserData();
+    getUserName();
   }, [post.user, token]);
 
 const cardStyle = {
