@@ -69,14 +69,16 @@ const submitHandler=async(e)=>{
 
 
   return (
-    <div >
+    <div>
       <Header />
       <div>
         <form
           style={{
-            marginLeft: '30%',
+            marginTop:'1rem',
+            marginLeft: '25%',
             height: ' 400px',
-            backgroundColor: ' 	#E0E0E0',
+            backgroundColor: '#D3D3D3',
+            width: '50%',
           }}
           onSubmit={submitHandler}
         >

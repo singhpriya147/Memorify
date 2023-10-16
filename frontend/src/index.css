@@ -66,3 +66,11 @@ justify-content: space-between;
 padding-left: 1em;
  cursor: pointer;
 }
+.update form{
+ 	background-color: #fff;
+	padding: 1.5rem;
+	border-radius: 0.5rem;
+	box-shadow: 0px 0px 5px #ddd;
+	text-align: center;
+	/* width:80% */
+}
