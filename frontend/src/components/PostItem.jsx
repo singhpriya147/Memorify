@@ -141,14 +141,15 @@ const API_USER = 'https://memorify.onrender.com/api/users';
 
 
   try {
-      // const res = await fetch(`http://localhost:5000/api/users/${post.user}`, {
-      const res = await fetch(API_USER+`${post.user}`, {
+      const res = await fetch(`http://localhost:5000/api/users/${post.user}`, {
+      // const res = await fetch(API_USER+`${post.user}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
       if (res.ok) {
         const postOwner = await res.json();
+        console.log(postOwner.name);
         setOwner(postOwner.name);
       }
   } catch (error) {

@@ -53,8 +53,8 @@ const getUserFeed = async (token) => {
   };
 
   const response = await axios.get(API_URL, config);
-  // console.log(' getFeedpost is working');
-  // console.log(response.data);
+  console.log(' getFeedpost is working');
+  console.log(response.data);
   return response.data;
 };
 
