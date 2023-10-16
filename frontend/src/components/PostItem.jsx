@@ -162,7 +162,7 @@ const API_USER = 'https://memorify.onrender.com/api/users';
 
 const cardStyle = {
   width: 650, // Set your desired width
-  height: 500, // Set your desired height
+  height: 400, // Set your desired height
   // You can also set other CSS properties like overflow and max-width to control the image inside the card
 };
   return (
