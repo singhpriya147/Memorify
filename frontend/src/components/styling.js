@@ -5,11 +5,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { backdropClasses } from '@mui/material';
 
 export const useStyles = makeStyles((theme) => ({
-  button: {
-    '&.css-1ypec4v-MuiButtonBase-root-MuiButton-root': {
-      color: 'green',
-    },
-  },
+  
 
   form: {
     backgroundColor: '#fff',
