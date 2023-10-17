@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import postService from './postService'
 // const API_URL = 'http://localhost:5000/api/posts';
-const API_URL = 'https://memorify.onrender.com/api/posts';
+const API_URL = 'https://memorify.onrender.com/api/posts/';
 const initialState={
  posts:[],
  isError:false,
@@ -148,7 +148,7 @@ export const deleteComment = createAsyncThunk(
       const token = thunkAPI.getState().auth.user.token;
 
       const response = await fetch(
-         API_URL+'/'+'comment'+'/'+`${id}`,
+         API_URL+'comment'+'/'+`${id}`,
         {
           method: 'DELETE',
           headers: {
@@ -160,7 +160,7 @@ export const deleteComment = createAsyncThunk(
       );
 
       const data = await response.json(); // Await 
-      // console.log(data);
+      console.log(data);
       return data;
     } catch (error) {
       const message =
@@ -322,17 +322,18 @@ export const postSlice = createSlice({
         state.isLoading = false;
         state.isSuccess = true;
 
-       const{id,commentId}=action.payload;
+      //  const{id,commentId}=action.payload;
       
-           state.posts = state.posts.map((post) => {
-             if (post._id === id) {
-               post.comments = post.comments.filter(
-                 (comment) => comment._id !== commentId
-               );
-             }
-             return post;
-           });
-        
+      //      state.posts = state.posts.map((post) => {
+      //        if (post._id === id) {
+      //          post.comments = post.comments.filter(
+      //            (comment) => comment._id !== commentId
+      //          );
+      //        }
+      //        return post;
+      //         window.location.reload();
+      //      });
+        state.posts.comment = action.payload.comment;
 
           
            

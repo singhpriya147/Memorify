@@ -11,7 +11,7 @@ import { getUserFeed } from '../../features/Posts/postSlice';
 // import getFollowingPosts from '.';
 import { deleteComment } from '../../features/Posts/postSlice';
 //  const API_USER = 'http://localhost:5000/api/users';
- const API_USER = 'https://memorify.onrender.com/api/users';
+ const API_USER = 'https://memorify.onrender.com/api/users/';
 const CommentCard = ({
   userId, // the person who commented
   comment,
@@ -33,8 +33,8 @@ const CommentCard = ({
       commentId:commentId,
     }
 
-  dispatch(deleteComment(commentData));
-  dispatch(getUserFeed());
+  await dispatch(deleteComment(commentData));
+  // dispatch(getUserFeed());
    window.location.reload();
   };
 
@@ -45,7 +45,7 @@ const CommentCard = ({
 
   const getData = async () => {
     const res = await fetch(
-      API_USER+'/'+`${userId}`,
+      API_USER+`${userId}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
