@@ -24,6 +24,7 @@ const CommentCard = ({
   const [userInComment, setUserInComment] = useState(null);
   // const { user } = useSelector((state) => state.user);
   // const token=user.token;
+   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
 
   const deleteCommentHandle = async () => {
@@ -54,10 +55,11 @@ const CommentCard = ({
     );
     const user = await res.json();
     setUserInComment(user);
+     setLoading(false); 
  
   };
 
-  if (!userInComment) {
+  if (loading) {
     // User data is loading or not available yet
     return <div>Loading...</div>;
   }

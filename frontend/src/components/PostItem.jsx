@@ -114,8 +114,8 @@ const API_USER = 'https://memorify.onrender.com/api/users/';
    
     setCommentValue(''); // Clear the comment input field
       //  setCommentToggle(false);
-    await dispatch(getUserFeed());
-
+    // await dispatch(getUserFeed());
+    window.location.reload();
     
   }
 
@@ -262,7 +262,7 @@ const cardStyle = {
                   />
                 ))
               ) : (
-                <Typography>No comments Yet</Typography>
+                <Typography>Loading</Typography>
               )}
             </div>
           </Dialog>
