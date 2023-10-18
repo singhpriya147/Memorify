@@ -59,7 +59,10 @@ When you access the project by following the provided link, you will be directed
 
 7-**Logout**: When you are done using the application, click on the "Logout" button to securely log out of your account
 
- 
+## Screenshots 
+1- **Login Page**
+![Alt text](path/to/screenshot.png)
+
 ## Installation
 
 **Step-1 Clone the Repository**
