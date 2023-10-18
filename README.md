@@ -61,7 +61,7 @@ When you access the project by following the provided link, you will be directed
 
 ## Screenshots 
 1- **Login Page**
-![Alt text](path/to/screenshot.png)
+![Screenshot (813)](https://github.com/singhpriya147/Memorify/assets/72970648/a3ce710c-4954-41f2-a10b-e0bdcf9702cc)
 
 ## Installation
 
