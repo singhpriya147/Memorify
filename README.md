@@ -61,19 +61,48 @@ When you access the project by following the provided link, you will be directed
 
 ## Screenshots 
 1- **Login Page**
+
 ![Screenshot (813)](https://github.com/singhpriya147/Memorify/assets/72970648/a3ce710c-4954-41f2-a10b-e0bdcf9702cc)
+
 2- **Register Page**
+
 ![Screenshot (815)](https://github.com/singhpriya147/Memorify/assets/72970648/ed4a0e42-4a64-4b34-8d1f-e05d1018b785)
+
 3- **Dashboard Page**
+
 ![Screenshot (816)](https://github.com/singhpriya147/Memorify/assets/72970648/0ce55c3c-e3b3-4322-b5e0-28cdb28674ea)
 
 ![Screenshot (818)](https://github.com/singhpriya147/Memorify/assets/72970648/60d0531a-f875-41bb-a5ee-f4ea6f972511)
+
 4- **Comment Modal**
+
 ![Screenshot (823)](https://github.com/singhpriya147/Memorify/assets/72970648/385998f2-3e78-459a-91f9-01ee701f9b9d)
+
  **User can delete their comment**
- ![Screenshot (825)](https://github.com/singhpriya147/Memorify/assets/72970648/26c51267-6cc3-4eec-a827-4cd5d80502e9)
+ 
+![Screenshot (825)](https://github.com/singhpriya147/Memorify/assets/72970648/361bdc79-4ee8-444f-a064-794f0fd4ad30)
+
  **Post user can delete any comment on their post**
+ 
  ![Screenshot (824)](https://github.com/singhpriya147/Memorify/assets/72970648/6a0c0e38-cf65-40b5-ba75-d6f98475536a)
+ 
+5- **user can see there post by clicking on "My post" button in header**
+
+![Screenshot (821)](https://github.com/singhpriya147/Memorify/assets/72970648/c32f4b27-5aaa-42d4-8fa8-fb77f99706e6)
+
+6- **Edit Caption modal**
+
+![Screenshot (822)](https://github.com/singhpriya147/Memorify/assets/72970648/c6a16415-968f-4ae8-9683-b1ba61594f7e)
+
+7-**Update Profile**
+
+![Screenshot (819)](https://github.com/singhpriya147/Memorify/assets/72970648/ba69ff4d-536c-40dc-9911-5f5a051d080d)
+
+8-**Update password**
+
+![Screenshot (820)](https://github.com/singhpriya147/Memorify/assets/72970648/0183a809-08d7-4be5-9b8c-44ee7ad2e7f2)
+
+
 ## Installation
 
 **Step-1 Clone the Repository**
