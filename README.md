@@ -144,7 +144,8 @@ npm install
 
 ## Future Feature 
 
-1- **Forget password** -
+1- **Forget password** 
 Feature will be  designed to help users reset their passwords in case they forget their login credentials. This feature provides a user-friendly way for users to regain access to their accounts.
-2- **List of Followers/ Following** -
+
+2- **List of Followers/ Following** 
 Users can usually access their list of followers from their profile . There will  be an option to view a list of users who are following them
