@@ -66,8 +66,14 @@ When you access the project by following the provided link, you will be directed
 ![Screenshot (815)](https://github.com/singhpriya147/Memorify/assets/72970648/ed4a0e42-4a64-4b34-8d1f-e05d1018b785)
 3- **Dashboard Page**
 ![Screenshot (816)](https://github.com/singhpriya147/Memorify/assets/72970648/0ce55c3c-e3b3-4322-b5e0-28cdb28674ea)
-4- **Comment Modal**
+
 ![Screenshot (818)](https://github.com/singhpriya147/Memorify/assets/72970648/60d0531a-f875-41bb-a5ee-f4ea6f972511)
+4- **Comment Modal**
+![Screenshot (823)](https://github.com/singhpriya147/Memorify/assets/72970648/385998f2-3e78-459a-91f9-01ee701f9b9d)
+ **User can delete their comment**
+ ![Screenshot (825)](https://github.com/singhpriya147/Memorify/assets/72970648/26c51267-6cc3-4eec-a827-4cd5d80502e9)
+ **Post user can delete any comment on their post**
+ ![Screenshot (824)](https://github.com/singhpriya147/Memorify/assets/72970648/6a0c0e38-cf65-40b5-ba75-d6f98475536a)
 ## Installation
 
 **Step-1 Clone the Repository**
