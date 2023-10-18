@@ -62,7 +62,12 @@ When you access the project by following the provided link, you will be directed
 ## Screenshots 
 1- **Login Page**
 ![Screenshot (813)](https://github.com/singhpriya147/Memorify/assets/72970648/a3ce710c-4954-41f2-a10b-e0bdcf9702cc)
-
+2- **Register Page**
+![Screenshot (815)](https://github.com/singhpriya147/Memorify/assets/72970648/ed4a0e42-4a64-4b34-8d1f-e05d1018b785)
+3- **Dashboard Page**
+![Screenshot (816)](https://github.com/singhpriya147/Memorify/assets/72970648/0ce55c3c-e3b3-4322-b5e0-28cdb28674ea)
+4- **Comment Modal**
+![Screenshot (818)](https://github.com/singhpriya147/Memorify/assets/72970648/60d0531a-f875-41bb-a5ee-f4ea6f972511)
 ## Installation
 
 **Step-1 Clone the Repository**
