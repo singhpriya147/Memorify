@@ -4,8 +4,7 @@ const crypto = require('crypto');
 const asyncHandler = require('express-async-handler');
 const User = require('../models/userModels');
 const PostMessage = require('../models/postModels');
-const { sendEmail } = require("../middleware/sendEmail");
-// const {generateToken}=requires('../middleware/generteToken')
+const { sendEmail } = require('../middleware/sendEmail');
 
 const registerUser = asyncHandler(async (req, res) => {
   const {
@@ -13,7 +12,7 @@ const registerUser = asyncHandler(async (req, res) => {
     email,
     password,
     profilePicture,
-    
+
     location,
     occupation,
   } = req.body;
@@ -40,12 +39,10 @@ const registerUser = asyncHandler(async (req, res) => {
     email,
     password: hashedPassword,
     profilePicture,
-    
+
     location,
     occupation,
   });
-
-  //  console.log(req.body.profilePicture);
 
   if (user) {
     res.status(201).json({
@@ -81,17 +78,14 @@ const loginUser = asyncHandler(async (req, res) => {
 });
 
 // update a password
-// paasword is not hashing
 
 const updatePassword = asyncHandler(async (req, res) => {
   const { oldPassword, newPassword } = req.body;
   const userId = req.user._id;
-  // console.log(userId)
 
   try {
     const user = await User.findById(req.user._id);
-    // const user = await User.findById(userId);
-    // console.log(user);
+
     if (!user) {
       return res.status(400).json({
         success: false,
@@ -99,12 +93,6 @@ const updatePassword = asyncHandler(async (req, res) => {
       });
     }
 
-    // if (!oldPassword || !newPassword) {
-    //   return res.status(400).json({
-    //     success: false,
-    //     message: 'Please provide old and new password',
-    //   });
-    // }
     const isPasswordMatch = await bcrypt.compare(oldPassword, user.password);
 
     if (!isPasswordMatch) {
@@ -118,28 +106,23 @@ const updatePassword = asyncHandler(async (req, res) => {
     user.password = hashedPassword;
     await user.save();
 
-     res.status(200).json({
+    res.status(200).json({
       success: true,
       message: 'Password updated',
-      // data:user.password,
     });
 
-    const data=await response.json();
-    console.log("backend reponse",data);
+    const data = await response.json();
+    console.log('backend reponse', data);
     return data;
-
   } catch (error) {
-     res.status(500).json({
+    res.status(500).json({
       success: false,
       message: error.message,
-      
     });
-    // console.log(error)
   }
 });
 
 // update profile
-// the name is not changing
 
 const updateProfile = asyncHandler(async (req, res) => {
   try {
@@ -149,7 +132,7 @@ const updateProfile = asyncHandler(async (req, res) => {
       .populate('email')
       .populate('location')
       .populate('occupation');
-    const { name, email,location,occupation ,profilePicture} = req.body;
+    const { name, email, location, occupation, profilePicture } = req.body;
     if (name) {
       user.name = name;
     }
@@ -157,10 +140,10 @@ const updateProfile = asyncHandler(async (req, res) => {
       user.email = email;
     }
     if (location) {
-       user.location = location;
+      user.location = location;
     }
     if (occupation) {
-        user.occupation = occupation;
+      user.occupation = occupation;
     }
     if (profilePicture) {
       user.profilePicture = profilePicture;
@@ -178,51 +161,6 @@ const updateProfile = asyncHandler(async (req, res) => {
     });
   }
 });
-
-// const deleteProfile=async(req,res)=>{
-//   try{
-//  const user=await User.findById(req.user._id);
-//  console.log(user);
-//  const posts=user.posts;
-
-//  const follower=user.follower;
-//  const following=user.following
-//  const userId=user._id;
-//  await user.remove();
-//  // logout user
-// //  localStorage.removeItem('user');
-//  for(let i=0;i<posts.length;i++){
-//   const post = await PostMessage.findById(posts[i]);
-//   await post.remove();
-//  }
-// console.log(posts);
-//  // delete users from followers following
-//  for(let i=0;i<follower.length;i++){
-//   const follower=await User.findById(follower[i]);
-//   const index=follower.following.indexOf(userId);
-//   follower.following.splice(index,1);
-//   await follower.save();
-//  }
-// // REMOVING USERS FROM FOLLOWINGS FOLLOWERS
-//  for (let i = 0; i < following.length; i++) {
-//    const follows = await User.findById(following[i]);
-//    const index = follows.following.indexOf(userId);
-//    follows.following.splice(index, 1);
-//    await follows.save();
-//  }
-
-//  res.status(200).json({
-//   success:true,
-//   message:"profile deleted",
-//  })
-//   }
-//   catch(error){
-// res.status(500).json({
-//   success:false,
-//   message:error.message,
-// })
-//   }
-// }
 
 const forgotPassword = async (req, res) => {
   try {
@@ -321,7 +259,6 @@ module.exports = {
   loginUser,
   updatePassword,
   updateProfile,
-  // deleteProfile,
   forgotPassword,
   resetPassword,
 };
