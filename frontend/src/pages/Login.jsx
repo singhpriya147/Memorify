@@ -53,6 +53,19 @@ const Login = () => {
     dispatch(login(userData));
   };
 
+  const fillCredentials = () => {
+    const demoEmail = 'alex123@gmail.com';
+    const demoPassword = 'alex123';
+    setFormData({
+      ...formData,
+      email: demoEmail,
+      password: demoPassword,
+    });
+    
+    
+  };
+
+
   return (
     <div className='container'>
       <div className='left-container'>
@@ -97,7 +110,13 @@ const Login = () => {
               onChange={onChange}
             />
           </div>
-
+          <button
+            type='button'
+            style={{ backgroundColor: ' #6A0DAD' }}
+            onClick={fillCredentials}
+          >
+            Use Demo Credentials
+          </button>
           <button type='submit'>Submit</button>
         </form>
 
