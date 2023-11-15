@@ -10,8 +10,8 @@ import { useDispatch } from 'react-redux';
 // import { getFollowingPosts, getMyPosts } from '../../Actions/User';
 // import getFollowingPosts from '.';
 import { deleteComment } from '../../features/Posts/postSlice';
-//  const API_USER = 'http://localhost:5000/api/users';
- const API_USER = 'https://memorify.onrender.com/api/users/';
+ const API_USER = 'http://localhost:5000/api/users';
+//  const API_USER = 'https://memorify.onrender.com/api/users/';
 const CommentCard = ({
   userId, // the person who commented
   comment,

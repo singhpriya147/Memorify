@@ -1,6 +1,6 @@
 import axios from 'axios';
-const API_URL = 'https://memorify.onrender.com/api/posts';
-// const API_URL = 'http://localhost:5000/api/posts';
+// const API_URL = 'https://memorify.onrender.com/api/posts';
+const API_URL = 'http://localhost:5000/api/posts';
 // create new post
 
 const createPost=async(postData,token)=>{

@@ -46,8 +46,8 @@ export default function PostItem({ post }) {
 const [editCaptionToggle, setEditCaptionToggle] = useState(false);
 
   const dispatch = useDispatch();
-const API_POST = 'https://memorify.onrender.com/api/posts/';
-const API_USER = 'https://memorify.onrender.com/api/users/';
+const API_POST = 'https://localhost:5000/api/posts/';
+const API_USER = 'https://localhost:5000/api/users/';
   const userId = user._id;
   const token = user.token;
   // console.log("logged in user userId")

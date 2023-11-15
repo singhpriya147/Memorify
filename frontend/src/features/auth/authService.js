@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// const API_USER='http://localhost:5000/api/users/'
-const API_USER = 'https://memorify.onrender.com/api/users/';
+const API_USER='http://localhost:5000/api/users/'
+// const API_USER = 'https://memorify.onrender.com/api/users/';
 // This code defines a JavaScript function register that sends a POST request to an API endpoint /api/users/ using the axios library. The function takes an argument userData
 // (dispatch(register(userData))
 // which is an object containing the data that needs to be sent to the API. The function then makes an API call using the axios.post method, passing the API URL and the user data as arguments.

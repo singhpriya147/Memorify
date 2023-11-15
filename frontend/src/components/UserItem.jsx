@@ -25,7 +25,7 @@ function UserItem({person})
   const token = user.token;
   // console.log(user._id);
 
- const API_USER = 'https://memorify.onrender.com/api/users/';
+ const API_USER = 'https://localhost:5000/api/users/';
 const [isFollowing, setIsFollowing] = useState(false);
 const [buttonLabel,setButtonLabel]=useState("Follow");
 

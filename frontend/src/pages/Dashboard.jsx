@@ -34,7 +34,7 @@ function Dashboard() {
   // console.log(posts.posts.length);
    const isNonMobileScreens = useMediaQuery('(min-width:960px)');
  
-const API_USER = 'https://memorify.onrender.com/api/users';
+const API_USER = 'https://localhost:5000/api/users';
   // const userId = user._id;
   const token = user.token;
 
@@ -87,8 +87,8 @@ const API_USER = 'https://memorify.onrender.com/api/users';
   const getAllPerson = async () => {
 
     try{
-    // const res = await fetch(`http://localhost:5000/api/users`, {
-    const res = await fetch(API_USER, {
+    const res = await fetch(`http://localhost:5000/api/users`, {
+    // const res = await fetch(API_USER, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

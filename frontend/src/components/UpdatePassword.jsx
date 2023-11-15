@@ -16,7 +16,7 @@ const token =user.token;
  const [newPassword,setNewPassword]=useState();
  const dispatch=useDispatch();
  const navigate= useNavigate();
-const API_USER = 'https://memorify.onrender.com/api/users/';
+const API_USER = 'https://localhost:5000/api/users/';
 
 
  const submitHandler=async(e)=>{

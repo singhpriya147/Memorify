@@ -29,7 +29,7 @@ function MyProfile({userId,token}) {
   );
 
   // const id=user._id;
- const API_USER = 'https://memorify.onrender.com/api/users/';
+ const API_USER = 'http://localhost:5000/api/users/';
    
 
 

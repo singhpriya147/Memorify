@@ -1,8 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import authService from './authService';
 // async thunk function -that deal with async data backend
-// const API_USER='http://localhost:5000/api/users/'
-const API_USER = 'https://memorify.onrender.com/api/users/';
+const API_USER='http://localhost:5000/api/users/'
+// const API_USER = 'https://memorify.onrender.com/api/users/';
 // Get user which contain basic user data and a token  from localStorage
 const user = JSON.parse(localStorage.getItem('user'));
 
