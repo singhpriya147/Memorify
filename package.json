@@ -15,7 +15,6 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.1",
-    "concurrently": "^8.2.0",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "eslint": "^8.53.0",
@@ -34,6 +33,7 @@
   },
   "homepage": "https://github.com/singhpriya147/Memorify#readme",
   "devDependencies": {
+    "concurrently": "^8.2.2",
     "nodemon": "^3.0.1"
   }
 }
