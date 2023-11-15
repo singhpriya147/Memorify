@@ -1,31 +1,23 @@
 
 import * as React from 'react';
 import {Link,useNavigate} from 'react-router-dom'
-import AppBar from '@mui/material/AppBar';
-import { theme } from '../components/styling'
+
 import { useStyles } from './styling';
 import{useState} from 'react';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
+
 import Typography from '@mui/material/Typography';
 import MenuItem from '@mui/material/MenuItem';
 // import Button from '@mui/material/Button';
 // import Select from '@mui/material/Select';
 import MenuIcon from '@mui/icons-material/Menu';
-import IconButton from '@mui/material/IconButton';
-import InputBase from '@mui/material/InputBase';
-import FormControl from '@mui/material/FormControl';
-import Close  from '@mui/icons-material/Close';
+
 // import  Menu  from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 
 import {useSelector,useDispatch} from 'react-redux';
 import{logout,reset} from '../features/auth/authSlice'
 import { useMediaQuery } from '@mui/material';
-import { useSelect } from '@mui/base';
-import { ThemeProvider, } from '@mui/material/styles';
-import { green } from '@mui/material/colors';
-import zIndex from '@material-ui/core/styles/zIndex';
+
 
 
 

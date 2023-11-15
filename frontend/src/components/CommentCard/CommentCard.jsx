@@ -1,11 +1,11 @@
 import { Button, Typography } from '@mui/material';
 import React,{useState,useEffect}from 'react';
-import { Link } from 'react-router-dom';
+
 import './CommentCard.css';
 // import { Delete } from '@mui/icons-material';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { useDispatch, useSelector } from 'react-redux';
-import { getUserFeed } from '../../features/Posts/postSlice';
+import { useDispatch } from 'react-redux';
+
 // import { deleteCommentOnPost } from '../../Actions/Post';
 // import { getFollowingPosts, getMyPosts } from '../../Actions/User';
 // import getFollowingPosts from '.';
@@ -42,7 +42,7 @@ const CommentCard = ({
   useEffect(() => {
     getData(userId);
    
-  }, [userId, token]);
+  }, []);
 
   const getData = async () => {
     const res = await fetch(
