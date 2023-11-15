@@ -7,11 +7,9 @@ import{useState} from 'react';
 
 import Typography from '@mui/material/Typography';
 import MenuItem from '@mui/material/MenuItem';
-// import Button from '@mui/material/Button';
-// import Select from '@mui/material/Select';
+
 import MenuIcon from '@mui/icons-material/Menu';
 
-// import  Menu  from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 
 import {useSelector,useDispatch} from 'react-redux';
@@ -30,15 +28,14 @@ const classes = useStyles();
  const navigate=useNavigate()
  const dispatch=useDispatch()
  
- // from state we only want user so we use useselector 
+ 
  const {user}=useSelector((state)=>state.auth);
-// const [mode, setMode] = useState([]);
-// const [isMobileMenuToggled,setIsMobileMenuToggled]=useState(false);
+
  const isNonMobileScreens=useMediaQuery("(min-width:960px)");
 const onLogout=()=>{
-  // console.log(" clicked on logout button")
+  
   dispatch(logout())
-  // dispatch(reset())
+ 
   navigate('/login')
 }
 
@@ -57,9 +54,9 @@ const onLogout=()=>{
 
   return (
     <div className={`${classes.header}`}>
-      {/* <FlexBetween gap='1.75rem'> */}
+    
       <Typography
-        // //  fontSize='clamp(1rem,2rem,2.25rem)'
+       
 
         style={{
           fontFamily: 'Amatic SC',
@@ -72,7 +69,7 @@ const onLogout=()=>{
           Memorify
         </Link>
       </Typography>
-      {/* </FlexBetween> */}
+      
 
       {/* desktop version  */}
       {isNonMobileScreens ? (
@@ -98,11 +95,7 @@ const onLogout=()=>{
           )}
         </div>
       ) : (
-        // <IconButton
-        //   onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}
-        // >
-        //   <Menu />
-        // </IconButton>
+      
 
         <>
           <button

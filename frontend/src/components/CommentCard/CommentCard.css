@@ -7,14 +7,7 @@
   margin-top: 8px;
 }
 
-/* .commentUser > a {
-  display: flex;
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-  align-items: center;
-  align-self: flex-start;
-  transition: all 0.5s;
-} */
+
 .commentUser img {
   height: 3vmax;
   width: 3vmax;
@@ -24,9 +17,7 @@
   
 }
 
-/* .commentUser > a:hover {
-  transform: translateY(-10px);
-} */
+
 
 .commentUser > button {
   color: red;

@@ -1,16 +1,12 @@
 import  React from 'react';
 import {useStyles }from './styling';
-import  Typography  from '@mui/material/Typography';
+
 import { useSelector } from 'react-redux';
 import FileBase from 'react-file-base64';
 import {useDispatch} from 'react-redux'
-import Paper from '@mui/material/Paper';
-import Card from '@mui/material/Card'
+
 import TextField from '@mui/material/TextField';
-// import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-// import CardHeader from '@mui/material/CardHeader';
-import { Box, Container } from '@material-ui/core';
+
 import {createPost} from '../features/Posts/postSlice'
 import{useState} from 'react'
 
@@ -19,7 +15,7 @@ import{useState} from 'react'
 
 function PostForm() {
 
-const { user } = useSelector((state) => state.auth);
+
 const classes=useStyles()
 
    const [postData, setPostData] = useState({
@@ -54,17 +50,16 @@ const dispatch=useDispatch()
 
 const handleSubmit=(e)=>{
  e.preventDefault();
-  // console.log("clicked submit button")
+
 const Data = {
 
   title,
   message,
-  // owner:user.name,
+
   selectedFile,
   
   location,
 };
-// console.log(Data);
 
 
   dispatch(createPost(Data))
@@ -126,16 +121,7 @@ const Data = {
           }
         />
 
-        {/* <TextField
-          name='tags'
-          variant='outlined'
-          label='Tags (coma separated)'
-          fullWidth
-          value={postData.tags}
-          onChange={(e) =>
-            setPostData({ ...postData, tags: e.target.value.split(',') })
-          }
-        /> */}
+     
         <div className={classes.fileInput}>
           <FileBase
             type='file'
@@ -145,27 +131,9 @@ const Data = {
             }
           />
         </div>
-        {/* <Button
-          className={classes.buttonSubmit}
-          variant='contained'
-          color='secondary'
-          size='large'
-          type='submit'
-          fullWidth
-        >
-          Submit
-        </Button> */}
+       
         <button className='form-button'>submit</button>
-        {/* <Button
-          className={classes.buttonClear}
-          variant='contained'
-          color='secondary'
-          // size='small'
-          // onClick={clear}
-          fullWidth
-        >
-          Clear
-        </Button> */}
+      
       </form>
     </>
   );

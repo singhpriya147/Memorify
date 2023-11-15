@@ -1,6 +1,6 @@
 import React from 'react'
 import {useDispatch,useSelector} from 'react-redux'
-// import { updatePassword } from '../features/auth/authSlice';
+
 import { useState } from 'react';
  import Header from './Header';
  import { Button } from '@mui/material';

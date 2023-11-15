@@ -5,8 +5,7 @@ import {Typography} from '@material-ui/core';
 import {Paper} from '@material-ui/core';
 import CardMedia from '@mui/material/CardMedia';
 import React, { useEffect } from 'react'
-import { useSelector } from 'react-redux';
-// import { ThemeProvider } from '@mui/material/styles';
+
 import { useState } from 'react';
 
 
@@ -23,7 +22,7 @@ function UserItem({person})
  const { user } = useSelector((state) => state.auth);
  
   const token = user.token;
-  // console.log(user._id);
+  
 
  const API_USER = 'https://localhost:5000/api/users/';
 const [isFollowing, setIsFollowing] = useState(false);
@@ -106,8 +105,7 @@ const [buttonLabel,setButtonLabel]=useState("Follow");
           pr: '2rem',
           display: 'flex',
           flexDirection: 'row',
-          // backgroundColor: '#E5BEEC',
-          // alignItems: 'center',
+        
           borderRadius: '5px',
           mb: '2vmax',
         }}
@@ -116,8 +114,7 @@ const [buttonLabel,setButtonLabel]=useState("Follow");
           sx={{
             pb: '0.5rem',
             display: 'flex',
-            // bgcolor: 'grey',
-            // width: '2rem',
+       
             flexDirection: 'column',
             alignItems: 'center',
           }}

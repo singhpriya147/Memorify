@@ -1,18 +1,17 @@
 import React from 'react';
 import Card from '@mui/material/Card';
 import { useStyles } from './styling';
-import { TextField, Typography } from '@mui/material';
+import {  Typography } from '@mui/material';
 import CardMedia from '@mui/material/CardMedia';
-import Dialog from '@mui/material/Dialog';
-import { useDispatch, useSelector } from 'react-redux';
+
+import { useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import CardContent from '@mui/material/CardContent';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
-import { getUser, updateProfile} from '../features/auth/authSlice';
 
-import { Box } from '@material-ui/core';
+
 
 
 import {Link} from 'react-router-dom'
@@ -20,15 +19,14 @@ import {Link} from 'react-router-dom'
 
 function MyProfile({userId,token}) {
   const [user,setUser]=useState({name:'guest'});
-  // const { user } = useSelector((state) => state.auth);
-  // console.log(user.following);
+  
   const [followingCount, setFollowingCount] = useState(0)
   
   const [followerCount, setFollowerCount] = useState(
     user.follower ? user.follower.length : 0
   );
 
-  // const id=user._id;
+ 
  const API_USER = 'http://localhost:5000/api/users/';
    
 
@@ -47,11 +45,7 @@ function MyProfile({userId,token}) {
 
 
 
-    // useEffect(() => {
-    // dispatch(getUser(id));
-    //   // setFollowingCount(user.following ? user.following.length : 0);
-    //   // setFollowerCount(user.follower ? user.follower.length : 0);
-    // }, [id,dispatch]);
+    
 
 
 
@@ -64,7 +58,7 @@ function MyProfile({userId,token}) {
     });
     const user =await res.json()
     setUser(user)
-    // console.log(user)
+
    }
 
 
@@ -76,7 +70,7 @@ function MyProfile({userId,token}) {
   
   
 
-//  console.log(followingCount);
+
 
   return (
     <>
@@ -85,10 +79,7 @@ function MyProfile({userId,token}) {
         sx={{
           height: 350,
           width: 250,
-          // display: {
-          //   xs: 'none',
-          //   md:"block"
-          // },
+          
         }}
       >
         <CardMedia

@@ -50,14 +50,13 @@ const API_POST = 'https://localhost:5000/api/posts/';
 const API_USER = 'https://localhost:5000/api/users/';
   const userId = user._id;
   const token = user.token;
-  // console.log("logged in user userId")
-  // console.log(userId);
+
   const postId = post._id;
-  // console.log(postId);
+
   const handleLike = async () => {
     try {
       const response = await fetch(
-        // `http://localhost:5000/api/posts/${post._id}`,
+       
         API_POST+ `${post._id}`,
         {
           method: 'GET',
@@ -65,7 +64,7 @@ const API_USER = 'https://localhost:5000/api/users/';
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`,
           },
-          // credentials: 'include',
+         
         }
       );
 
@@ -74,7 +73,7 @@ const API_USER = 'https://localhost:5000/api/users/';
         setNo(noOfLikes + 1);
       }
     } catch (error) {
-      // console.log(error);
+     
     }
   };
   const handleUnlike = async () => {
@@ -96,7 +95,7 @@ const API_USER = 'https://localhost:5000/api/users/';
         setNo(noOfLikes - 1);
       }
     } catch (error) {
-      // console.log(error);
+      
     }
   };
 
@@ -109,12 +108,11 @@ const API_USER = 'https://localhost:5000/api/users/';
       id: postId, // Assuming postId is defined
       value: commentValue, // Assuming commentValue is defined
     };
-    //  console.log(commentData);
-    await dispatch(addComment(commentData));
+ 
+        await dispatch(addComment(commentData));
    
     setCommentValue(''); // Clear the comment input field
-      //  setCommentToggle(false);
-    // await dispatch(getUserFeed());
+     
     window.location.reload();
     
   }
@@ -126,7 +124,7 @@ const API_USER = 'https://localhost:5000/api/users/';
   
   const editCaptionHandler = async(e) => {
      e.preventDefault();
-    // console.log(" post caption edited");
+   
     const captionData={
       id:postId,
       value:editCaption,
@@ -169,10 +167,7 @@ const cardStyle = {
   return (
     <Box sx={ {paddingBottom: '2rem'} }>
       <Card
-        // sx={{
-        //   mb: '1vmax',
-        //   boxShadow: '3',
-        // }}
+        
         sx={cardStyle}
       >
         <CardHeader title={post.title} subheader={owner} />
@@ -185,11 +180,10 @@ const cardStyle = {
         </Typography>
         <CardMedia
           component='img'
-          // sx={{ heigth: 100 }}
+          
           image={post.selectedFile}
           alt={post.title}
-          // height='100%'
-          // width='100%'
+         
           sx={{ height: '50%', objectFit: 'contain' }}
         />
         <CardContent>
@@ -221,7 +215,7 @@ const cardStyle = {
             <div style={{ minwidth: 500, height: '100vh', padding: '2vmax' }}>
               <Typography variant='h4'>Comments</Typography>
               <form
-                // style={{ display: 'flex ', margin: '1vmax' }}
+               
                 style={{
                   backgroundColor: '#fff',
                   padding: '2rem',
@@ -246,11 +240,10 @@ const cardStyle = {
 
               {post.comments && post.comments.length > 0 ? (
                 post.comments.map((item) => (
-                  // console.log(item.user)
+                
                   <CommentCard
                     userId={item.user}
-                    // name={item.user.name}
-                    // profilePicture={item.user.profilePicture}
+                    
                     comment={item.comment}
                     commentId={item._id}
                     key={item._id}
@@ -267,8 +260,7 @@ const cardStyle = {
             </div>
           </Dialog>
 
-          {/*  post's userid is same as login id then show delete otherwise dont  */}
-
+        
           {user._id === post.user ? (
             <div className='post-footer'>
               <DeleteIcon onClick={() => dispatch(deletePost(post._id))} />
@@ -310,27 +302,7 @@ const cardStyle = {
                       Post
                     </Button>
                   </form>
-                  {/* 
-              {post.comments && post.comments.length > 0 ? (
-                post.comments.map((item) => (
-                  // console.log(item.user)
-                  <CommentCard
-                    userId={item.user}
-                    // name={item.user.name}
-                    // profilePicture={item.user.profilePicture}
-                    comment={item.comment}
-                    commentId={item._id}
-                    key={item._id}
-                    postId={postId}
-                    // isAccount={isAccount}
-                    token={user.token}
-                    postUser={post.user}
-                    loggedInUser={user._id}
-                  />
-                ))
-              ) : (
-                <Typography>No comments Yet</Typography>
-              )} */}
+           
                 </div>
               </Dialog>
             </div>
