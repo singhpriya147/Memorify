@@ -23,7 +23,7 @@ function UserItem({person})
   const token = user.token;
   
 
- const API_USER = 'https://localhost:5000/api/users/';
+// const API_USER = 'https://localhost:5000/api/users/';
 const [isFollowing, setIsFollowing] = useState(false);
 const [buttonLabel,setButtonLabel]=useState("Follow");
 
@@ -33,7 +33,8 @@ const [buttonLabel,setButtonLabel]=useState("Follow");
 
    const TofollowUser=async()=>{
     const res = await fetch(
-      API_USER  +'follow/'  + `${person._id}`,
+      
+      `http://localhost:5000/api/users/follow/${person._id}`,
       {
         method: 'PUT',
         headers: {
@@ -50,14 +51,17 @@ const [buttonLabel,setButtonLabel]=useState("Follow");
      
    }
  const ToUnfollowUser = async () => {
-   const res = await fetch(API_USER +' unfollow/'+`${person._id}`, {
-     method: 'PUT',
-     headers: {
-       Accept: 'application/json',
-       'Content-Type': 'application/json',
-       Authorization: `Bearer ${token}`,
-     },
-   });
+   const res = await fetch(
+     `http://localhost:5000/api/users/unfollow/${person._id}`,
+     {
+       method: 'PUT',
+       headers: {
+         Accept: 'application/json',
+         'Content-Type': 'application/json',
+         Authorization: `Bearer ${token}`,
+       },
+     }
+   );
    const data = await res.json();
    console.log(data);
    setIsFollowing(false);
