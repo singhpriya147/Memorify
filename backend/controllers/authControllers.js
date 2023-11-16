@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 const crypto = require('crypto');
 const asyncHandler = require('express-async-handler');
 const User = require('../models/userModels');
-const PostMessage = require('../models/postModels');
+
 const { sendEmail } = require('../middleware/sendEmail');
 
 const registerUser = asyncHandler(async (req, res) => {
@@ -81,7 +81,7 @@ const loginUser = asyncHandler(async (req, res) => {
 
 const updatePassword = asyncHandler(async (req, res) => {
   const { oldPassword, newPassword } = req.body;
-  const userId = req.user._id;
+  
 
   try {
     const user = await User.findById(req.user._id);
@@ -178,7 +178,7 @@ const forgotPassword = async (req, res) => {
     const resetUrl = `${req.protocol}://${req.get(
       'host'
     )}/api/users/password/reset/${resetPasswordToken}`;
-    //  console.log(resetUrl);
+   
     const message = `Reset your password by clicking the link below :\n\n ${resetUrl}`;
 
     try {
@@ -230,7 +230,7 @@ const resetPassword = async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
-    // user.password=req.body.password;
+ 
     user.password = hashedPassword;
     (user.resetPasswordToken = undefined),
       (user.resetPasswordExpire = undefined),

@@ -13,7 +13,7 @@ const getUserPosts = asyncHandler(async (req, res) => {
 });
 
 const createPost = asyncHandler(async (req, res) => {
-  const { title, message, location, selectedFile } = req.body;
+ 
 
   if (!req.body) {
     res.status(400).json({ message: 'please add all infomation' });
