@@ -1,13 +1,12 @@
-import { Card } from '@mui/material'
-import { Button, CardHeader } from '@material-ui/core';
+
 import{ Box} from '@mui/material';
 import {Typography} from '@material-ui/core';
-import {Paper} from '@material-ui/core';
+
 import CardMedia from '@mui/material/CardMedia';
 import React, { useEffect } from 'react'
 
 import { useState } from 'react';
-
+import {useSelector } from 'react-redux'
 
 
 
