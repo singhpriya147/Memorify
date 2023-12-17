@@ -4,7 +4,7 @@ import { useStyles } from './styling';
 import {  Typography } from '@mui/material';
 import CardMedia from '@mui/material/CardMedia';
 
-import { useDispatch } from 'react-redux';
+
 import { useEffect, useState } from 'react';
 import CardContent from '@mui/material/CardContent';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
@@ -20,10 +20,10 @@ import {Link} from 'react-router-dom'
 function MyProfile({userId,token}) {
   const [user,setUser]=useState({name:'guest'});
   
-  const [followingCount, setFollowingCount] = useState(0)
+ 
   
   const [followerCount, setFollowerCount] = useState(
-    user.follower ? user.follower.length : 0
+    0
   );
 
  
@@ -34,7 +34,7 @@ function MyProfile({userId,token}) {
 
 
 
-  const dispatch = useDispatch();
+ 
    const classes = useStyles();
   
   useEffect(()=>{
@@ -57,6 +57,7 @@ function MyProfile({userId,token}) {
       },
     });
     const user =await res.json()
+         setFollowerCount(user.follower ? user.follower.length : 0)
     setUser(user)
 
    }

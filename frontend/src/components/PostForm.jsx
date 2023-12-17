@@ -1,7 +1,7 @@
 import  React from 'react';
 import {useStyles }from './styling';
 
-import { useSelector } from 'react-redux';
+
 import FileBase from 'react-file-base64';
 import {useDispatch} from 'react-redux'
 

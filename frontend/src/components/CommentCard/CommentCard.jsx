@@ -39,7 +39,7 @@ const CommentCard = ({
   useEffect(() => {
     getData(userId);
    
-  }, []);
+  }, [userId]);
 
   const getData = async () => {
     const res = await fetch(

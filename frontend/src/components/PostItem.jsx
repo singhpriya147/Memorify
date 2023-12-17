@@ -1,19 +1,19 @@
 import * as React from 'react';
-import axios from 'axios';
+
 import { useState, useEffect } from 'react';
 import Dialog from '@mui/material/Dialog';
 import Card from '@mui/material/Card';
-import { Input, TextField } from '@material-ui/core';
+import { TextField } from '@material-ui/core';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import { Typography } from '@material-ui/core';
 import CardActions from '@mui/material/CardActions';
 import EditIcon from '@mui/icons-material/Edit';
-import { IconButton } from '@material-ui/core';
+import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { getUserFeed } from '../features/Posts/postSlice';
+
 import Box from '@mui/material/Box';
 import {
   ChatBubbleOutline,
@@ -48,7 +48,7 @@ const [editCaptionToggle, setEditCaptionToggle] = useState(false);
   const dispatch = useDispatch();
 const API_POST = 'https://localhost:5000/api/posts/';
 const API_USER = 'https://localhost:5000/api/users/';
-  const userId = user._id;
+ 
   const token = user.token;
 
   const postId = post._id;
@@ -139,17 +139,15 @@ const API_USER = 'https://localhost:5000/api/users/';
 
 
   try {
-      // const res = await fetch(`http://localhost:5000/api/users/${post.user}`, {
-      const res = await fetch(API_USER+`${post.user}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      if (res.ok) {
-        const postOwner = await res.json();
-        console.log(postOwner.name);
-        setOwner(postOwner.name);
-      }
+      
+   const response = await axios.get(`/api/users/${post.user}`, {
+     headers: {
+       Authorization: `Bearer ${token}`,
+     },
+   });
+   const postOwner = response.data;
+   setOwner(postOwner.name);
+
   } catch (error) {
      console.error('Error fetching owner details:', error);
   }
@@ -157,7 +155,7 @@ const API_USER = 'https://localhost:5000/api/users/';
   };
   useEffect(() => {
     getUserName();
-  }, [post.user, token]);
+  });
 
 const cardStyle = {
   width: 650, 

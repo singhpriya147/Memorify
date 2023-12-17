@@ -13,7 +13,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 
 import {useSelector,useDispatch} from 'react-redux';
-import{logout,reset} from '../features/auth/authSlice'
+import{logout} from '../features/auth/authSlice'
 import { useMediaQuery } from '@mui/material';
 
 
