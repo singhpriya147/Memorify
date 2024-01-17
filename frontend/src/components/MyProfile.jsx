@@ -20,58 +20,24 @@ import {Link} from 'react-router-dom'
 function MyProfile({userId,token}) {
   const [user,setUser]=useState({name:'guest'});
   
- 
-  
-  const [followerCount, setFollowerCount] = useState(
-    0
-  );
-
- 
- const API_USER = 'http://localhost:5000/api/users/';
-   
-
-
-
-
-
- 
    const classes = useStyles();
   
   useEffect(()=>{
      getData()
      
-       setFollowerCount(user.follower ? user.follower.length : 0);
+     
   },[])
 
-
-
-    
-
-
-
- 
    const getData = async()=>{
-    const res = await fetch(API_USER+`${userId}`, {
+    const res = await fetch(`/api/users/${userId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
     const user =await res.json()
-         setFollowerCount(user.follower ? user.follower.length : 0)
-    setUser(user)
-
+    setUser(user);
+  
    }
-
-
-  
-
-
-
-
-  
-  
-
-
 
   return (
     <>
@@ -80,7 +46,6 @@ function MyProfile({userId,token}) {
         sx={{
           height: 350,
           width: 250,
-          
         }}
       >
         <CardMedia
@@ -103,27 +68,28 @@ function MyProfile({userId,token}) {
             {user.email}
           </Typography>
           <Typography>
-            
             <LocationOnOutlinedIcon />
             {user.location}
           </Typography>
           <Typography>
-         
             <WorkOutlineOutlinedIcon />
             {user.occupation}
           </Typography>
 
           {user && user.follower ? (
             <Typography>
-              {' '}
-              Follower
-              {user.follower.length}
+              <h4>
+                Follower {'   '}
+                {user ? user.follower.length : 0}
+              </h4>
             </Typography>
           ) : (
             <Typography>0 </Typography>
           )}
           {user && user.following ? (
-            <Typography> Following {user.following.length} </Typography>
+            <Typography>
+              <h4>Following {user ? user.following.length : 0}</h4>
+            </Typography>
           ) : (
             <Typography>0 </Typography>
           )}
