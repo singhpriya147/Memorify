@@ -46,22 +46,23 @@ export default function PostItem({ post }) {
 const [editCaptionToggle, setEditCaptionToggle] = useState(false);
 
   const dispatch = useDispatch();
-const API_POST = 'https://localhost:5000/api/posts/';
-const API_USER = 'https://localhost:5000/api/users/';
+// const API_POST = 'https://localhost:5000/api/posts/';
+
  
   const token = user.token;
 
   const postId = post._id;
 
   const handleLike = async () => {
+    console.log('clicked on like button');
     try {
-      const response = await fetch(
+      const response = await axios.get(`/api/posts/${post._id}`,
        
-        API_POST+ `${post._id}`,
+        
         {
-          method: 'GET',
+         
           headers: {
-            'Content-Type': 'application/json',
+           
             Authorization: `Bearer ${token}`,
           },
          
@@ -76,30 +77,48 @@ const API_USER = 'https://localhost:5000/api/users/';
      
     }
   };
+  // const handleUnlike = async () => {
+  //   try {
+  //     const response = await fetch(
+  //       API_POST+`${post._id}`,
+  //       {
+  //         method: 'GET',
+  //         headers: {
+  //           'Content-Type': 'application/json',
+  //           Authorization: `Bearer ${token}`,
+  //         },
+  //         //  credentials: 'include',
+  //       }
+  //     );
+
+  //     if (response.ok) {
+  //       setLiked(false);
+  //       setNo(noOfLikes - 1);
+  //     }
+  //   } catch (error) {
+      
+  //   }
+  // };
+
   const handleUnlike = async () => {
+    console.log("clicked on unlike button")
     try {
-      const response = await fetch(
-        API_POST+`${post._id}`,
+      const response = await axios.get(
+        `/api/posts/${post._id}`,
+
         {
-          method: 'GET',
           headers: {
-            'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`,
           },
-          //  credentials: 'include',
         }
       );
 
       if (response.ok) {
-        setLiked(false);
-        setNo(noOfLikes - 1);
+        setLiked(true);
+        setNo(noOfLikes -1);
       }
-    } catch (error) {
-      
-    }
+    } catch (error) {}
   };
-
-
   const addCommentHandler = async (e) => {
     e.preventDefault();
     console.log(' post comments');
