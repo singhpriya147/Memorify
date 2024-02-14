@@ -9,6 +9,10 @@ const userSchema = mongoose.Schema(
       min: 2,
       max: 50,
     },
+    avatar:{
+    public_id:String,
+    url:string,
+  },
     email: {
       type: String,
       required: [true, 'please add a email'],
@@ -18,7 +22,8 @@ const userSchema = mongoose.Schema(
     password: {
       type: String,
       required: [true, 'please add a password'],
-   
+      minlength:[6,"password must be at least of 6 character"],
+      select:false,
     },
     posts: [
       {
@@ -26,7 +31,7 @@ const userSchema = mongoose.Schema(
         ref: 'PostMessage',
       },
     ],
-    follower: [
+    followers: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
@@ -39,10 +44,7 @@ const userSchema = mongoose.Schema(
       },
     ],
 
-    profilePicture: {
-      type: String,
-      default: '',
-    },
+   
     location:{
       type: String,
       required: [true, 'please add a location'],

@@ -1,7 +1,7 @@
 const mongoose= require ('mongoose');
 const postSchema = mongoose.Schema({
   // owner of the post
-  user: {
+  owner: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
     ref: 'User',
@@ -9,7 +9,10 @@ const postSchema = mongoose.Schema({
   title: String,
   message: String,
   location: String,
-  selectedFile: String,
+  image:{
+    public_id:String,
+    url:string,
+  },
 
   likes: [
     {
