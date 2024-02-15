@@ -6,10 +6,14 @@ const postSchema = mongoose.Schema({
     required: true,
     ref: 'User',
   },
+  owner: {
+    type: String,
+    required: true,
+  },
   title: String,
   message: String,
   location: String,
-  selectedFile:String,
+  selectedFile: String,
 
   likes: [
     {

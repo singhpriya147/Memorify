@@ -9,7 +9,7 @@ function MyPosts() {
 
   // const [post,setPost]=useState([])
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { user } = useSelector((state) => state.auth);
    const{posts}=useSelector((state)=>state.post)
   //  console.log(user._id,user.token)

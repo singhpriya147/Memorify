@@ -34,7 +34,7 @@ import CommentCard from './CommentCard/CommentCard';
 export default function PostItem({ post }) {
 
   const { user } = useSelector((state) => state.auth);
-   const [owner,setOwner]=useState('');
+
   const [liked, setLiked] = useState(post.likes.includes(user._id));
   const [noOfLikes, setNo] = useState(post.likes.length);
 
@@ -154,27 +154,6 @@ const [editCaptionToggle, setEditCaptionToggle] = useState(false);
 
 
 
-  const getUserName = async () => {
-
-
-  try {
-      
-   const response = await axios.get(`/api/users/${post.user}`, {
-     headers: {
-       Authorization: `Bearer ${token}`,
-     },
-   });
-   const postOwner = response.data;
-   setOwner(postOwner.name);
-
-  } catch (error) {
-     console.error('Error fetching owner details:', error);
-  }
-
-  };
-  useEffect(() => {
-    getUserName();
-  });
 
 const cardStyle = {
   width: 650, 
@@ -184,12 +163,12 @@ const cardStyle = {
   return (
     <Box sx={{ paddingBottom: '2rem' }}>
       <Card sx={cardStyle}>
-        <CardHeader title={post.title} subheader={owner} />
+        <CardHeader title={post.title} subheader={post.user.name} />
         <Typography variant='caption' color='textSecondary'>
           {new Date(post.createdAt).toLocaleString()}
         </Typography>
 
-        <Typography sx={{ fontSize: 14 }} color='text.secondary'>
+        <Typography sx={{ fontSize: 14 }} color='textSecondary'>
           {post.location}
         </Typography>
         <CardMedia
@@ -199,7 +178,7 @@ const cardStyle = {
           sx={{ height: '50%', objectFit: 'contain' }}
         />
         <CardContent>
-          <Typography variant='body2' color='text.secondary'>
+          <Typography variant='body2' color='textPrimary'>
             {post.message}
           </Typography>
         </CardContent>

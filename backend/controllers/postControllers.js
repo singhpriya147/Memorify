@@ -224,12 +224,16 @@ const getPostOfFollowing = async (req, res) => {
     const user = await User.findById(req.user.id);
     const posts = await PostMessage.find({
       user: { $in: user.following },
-    });
+    }).populate('user', 'name');
 
+        const postsWithOwnerName = posts.map((post) => ({
+          ...post.toObject(),
+          owner: post.user.name, // Add 'owner' field with the user's name
+        }));
     res.status(200).json({
       success: true,
 
-      posts: posts.reverse(),
+      posts: postsWithOwnerName.reverse(),
       message: 'feed ',
     });
   } catch (error) {

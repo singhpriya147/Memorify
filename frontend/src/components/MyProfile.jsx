@@ -75,24 +75,33 @@ function MyProfile({userId,token}) {
             <WorkOutlineOutlinedIcon />
             {user.occupation}
           </Typography>
+          <Typography component='div'>
+            {user && user.following ? (
+              <Typography
+                component='span'
+                variant='body1'
+                sx={{ fontWeight: 'bold' }}
+              >
+                Following {user.following.length}
+              </Typography>
+            ) : (
+              <Typography>0</Typography>
+            )}
+          </Typography>
+          <Typography component='div'>
+            {user && user.follower ? (
+              <Typography
+                component='span'
+                variant='body1'
+                sx={{ fontWeight: 'bold' }}
+              >
+                Follower {user.follower.length}
+              </Typography>
+            ) : (
+              <Typography>0</Typography>
+            )}
+          </Typography>
 
-          {user && user.follower ? (
-            <Typography>
-              <h4>
-                Follower {'   '}
-                {user ? user.follower.length : 0}
-              </h4>
-            </Typography>
-          ) : (
-            <Typography>0 </Typography>
-          )}
-          {user && user.following ? (
-            <Typography>
-              <h4>Following {user ? user.following.length : 0}</h4>
-            </Typography>
-          ) : (
-            <Typography>0 </Typography>
-          )}
           <Link to='/update/profile'>
             <button>Update Profile</button>
           </Link>
