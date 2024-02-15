@@ -8,7 +8,7 @@ const postSchema = mongoose.Schema({
   },
   owner: {
     type: String,
-    required: true,
+
   },
   title: String,
   message: String,

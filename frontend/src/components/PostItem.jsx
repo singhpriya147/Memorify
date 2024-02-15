@@ -53,72 +53,69 @@ const [editCaptionToggle, setEditCaptionToggle] = useState(false);
 
   const postId = post._id;
 
-  const handleLike = async () => {
-    console.log('clicked on like button');
+
+
+
+
+const handleLike = async () => {
+  console.log('clicked on like button');
+  try {
+    const response = await axios.get(`/api/posts/${post._id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (response.status === 200 ) {
+      // If response is successful
+      setLiked(true); // Update liked state to true
+      setNo(noOfLikes + 1); // Increment the number of likes
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+  const handleUnlike = async () => {
     try {
-      const response = await axios.get(`/api/posts/${post._id}`,
-       
-        
-        {
-         
-          headers: {
-           
-            Authorization: `Bearer ${token}`,
-          },
-         
-        }
-      );
+      const response = await fetch(`/api/posts/${post._id}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        //  credentials: 'include',
+      });
 
       if (response.ok) {
-        setLiked(true);
-        setNo(noOfLikes + 1);
+        setLiked(false);
+        setNo(noOfLikes - 1);
       }
     } catch (error) {
-     
+      
     }
   };
+
   // const handleUnlike = async () => {
+  //   console.log("clicked on unlike button")
   //   try {
-  //     const response = await fetch(
-  //       API_POST+`${post._id}`,
+  //     const response = await axios.get(
+  //       `/api/posts/${post._id}`,
+
   //       {
-  //         method: 'GET',
   //         headers: {
-  //           'Content-Type': 'application/json',
   //           Authorization: `Bearer ${token}`,
   //         },
-  //         //  credentials: 'include',
   //       }
   //     );
 
-  //     if (response.ok) {
-  //       setLiked(false);
-  //       setNo(noOfLikes - 1);
-  //     }
-  //   } catch (error) {
-      
-  //   }
+  //      if (response.status >= 200 && response.status < 300) {
+  //        setLiked(true);
+  //        setNo(noOfLikes - 1);
+  //      }
+  //   } catch (error) {}
   // };
-
-  const handleUnlike = async () => {
-    console.log("clicked on unlike button")
-    try {
-      const response = await axios.get(
-        `/api/posts/${post._id}`,
-
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-
-      if (response.ok) {
-        setLiked(true);
-        setNo(noOfLikes -1);
-      }
-    } catch (error) {}
-  };
   const addCommentHandler = async (e) => {
     e.preventDefault();
     console.log(' post comments');
