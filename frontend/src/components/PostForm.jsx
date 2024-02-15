@@ -90,7 +90,7 @@ const Data = {
           multiline
           value={postData.title}
           className={classes.textField}
-          inputProps={classes.textField}
+          InputProps={{ classes: { input: classes.textField } }}
           onChange={(e) => setPostData({ ...postData, title: e.target.value })}
         />
 
@@ -121,7 +121,6 @@ const Data = {
           }
         />
 
-     
         <div className={classes.fileInput}>
           <FileBase
             type='file'
@@ -131,9 +130,8 @@ const Data = {
             }
           />
         </div>
-       
+
         <button className='form-button'>submit</button>
-      
       </form>
     </>
   );

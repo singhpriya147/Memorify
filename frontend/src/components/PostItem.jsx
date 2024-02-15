@@ -182,13 +182,10 @@ const cardStyle = {
   
 };
   return (
-    <Box sx={ {paddingBottom: '2rem'} }>
-      <Card
-        
-        sx={cardStyle}
-      >
+    <Box sx={{ paddingBottom: '2rem' }}>
+      <Card sx={cardStyle}>
         <CardHeader title={post.title} subheader={owner} />
-        <Typography variant='subheader' color='text.secondary'>
+        <Typography variant='caption' color='textSecondary'>
           {new Date(post.createdAt).toLocaleString()}
         </Typography>
 
@@ -197,10 +194,8 @@ const cardStyle = {
         </Typography>
         <CardMedia
           component='img'
-          
           image={post.selectedFile}
           alt={post.title}
-         
           sx={{ height: '50%', objectFit: 'contain' }}
         />
         <CardContent>
@@ -232,7 +227,6 @@ const cardStyle = {
             <div style={{ minwidth: 500, height: '100vh', padding: '2vmax' }}>
               <Typography variant='h4'>Comments</Typography>
               <form
-               
                 style={{
                   backgroundColor: '#fff',
                   padding: '2rem',
@@ -257,10 +251,8 @@ const cardStyle = {
 
               {post.comments && post.comments.length > 0 ? (
                 post.comments.map((item) => (
-                
                   <CommentCard
                     userId={item.user}
-                    
                     comment={item.comment}
                     commentId={item._id}
                     key={item._id}
@@ -277,7 +269,6 @@ const cardStyle = {
             </div>
           </Dialog>
 
-        
           {user._id === post.user ? (
             <div className='post-footer'>
               <DeleteIcon onClick={() => dispatch(deletePost(post._id))} />
@@ -319,7 +310,6 @@ const cardStyle = {
                       Post
                     </Button>
                   </form>
-           
                 </div>
               </Dialog>
             </div>
