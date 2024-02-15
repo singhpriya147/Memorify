@@ -9,10 +9,10 @@ const userSchema = mongoose.Schema(
       min: 2,
       max: 50,
     },
-    avatar:{
-    public_id:String,
-    url:string,
-  },
+    profilePicture: {
+      type: String,
+      default: '',
+    },
     email: {
       type: String,
       required: [true, 'please add a email'],
@@ -22,8 +22,8 @@ const userSchema = mongoose.Schema(
     password: {
       type: String,
       required: [true, 'please add a password'],
-      minlength:[6,"password must be at least of 6 character"],
-      select:false,
+      minlength: [6, 'password must be at least of 6 character'],
+      select: false,
     },
     posts: [
       {
@@ -31,30 +31,29 @@ const userSchema = mongoose.Schema(
         ref: 'PostMessage',
       },
     ],
-    followers: [
+    follower: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
       },
     ],
-    following: [
+    followin: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
       },
     ],
 
-   
-    location:{
+    location: {
       type: String,
       required: [true, 'please add a location'],
-    } ,
-    occupation:{
-       type: String,
+    },
+    occupation: {
+      type: String,
       required: [true, 'please add a job'],
     },
     resetPasswordToken: String,
-    resetPasswordExpire:Date,
+    resetPasswordExpire: Date,
   },
 
   {

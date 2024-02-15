@@ -9,10 +9,7 @@ const postSchema = mongoose.Schema({
   title: String,
   message: String,
   location: String,
-  image:{
-    public_id:String,
-    url:string,
-  },
+  selectedFile:String,
 
   likes: [
     {
