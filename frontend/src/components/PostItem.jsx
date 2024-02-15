@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Dialog from '@mui/material/Dialog';
 import Card from '@mui/material/Card';
 import { TextField } from '@material-ui/core';
@@ -156,13 +156,20 @@ const [editCaptionToggle, setEditCaptionToggle] = useState(false);
 
 
 const cardStyle = {
-  width: 650, 
-  height: 400,
+
+  // width: 650, 
+  // height: "auto",
+  backgroundColor:"white",
+display: "flex",
+//  flexWrap: "wrap",
+flexDirection:"column",
+// alignItems:"center",
+// justifiedContent:"center",
   
 };
   return (
     <Box sx={{ paddingBottom: '2rem' }}>
-      <Card sx={cardStyle}>
+      <Box sx={cardStyle}>
         <CardHeader title={post.title} subheader={post.user.name} />
         <Typography variant='caption' color='textSecondary'>
           {new Date(post.createdAt).toLocaleString()}
@@ -171,12 +178,18 @@ const cardStyle = {
         <Typography sx={{ fontSize: 14 }} color='textSecondary'>
           {post.location}
         </Typography>
-        <CardMedia
-          component='img'
-          image={post.selectedFile}
-          alt={post.title}
-          sx={{ height: '50%', objectFit: 'contain' }}
-        />
+        <Box sx={{display: "flex",
+
+          flexDirection:"column",
+          alignItems:"center"}}>
+          <CardMedia
+            component='img'
+            image={post.selectedFile}
+            alt={post.title}
+            sx={{ height: '50%', width: '50%', objectFit: 'cover' }}
+          />
+        </Box>
+
         <CardContent>
           <Typography variant='body2' color='textPrimary'>
             {post.message}
@@ -294,7 +307,7 @@ const cardStyle = {
             </div>
           ) : null}
         </CardActions>
-      </Card>
+      </Box>
     </Box>
   );
 }

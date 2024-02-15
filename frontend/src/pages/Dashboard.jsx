@@ -18,6 +18,7 @@ import { getUser } from '../features/auth/authSlice';
 // import { Container } from '@mui/material';
 
 import UserItem from '../components/UserItem'
+import { Directions } from '@mui/icons-material';
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -144,21 +145,51 @@ const API_USER = 'https://localhost:5000/api/users';
           <Box>
             <PostForm />
 
-            {/*  feed area */}
+            {/* feed area */}
+            {/* <Box
+                      sx={{
+                        paddingTop: '3rem',
+                      
+                      }}
+                    >
+                      {posts.posts && posts.posts.length > 0 ? (
+                        <Box >
+                          {posts.posts.map((post) => (
+                            <PostItem key={post._id} post={post} />
+                          ))}
+                        </Box>
+                      ) : (
+                        <Typography>Follow people to see their Memories</Typography>
+                      )}
+                    </Box>
+                  </Box>
+          */}
+
             <Box
               sx={{
-                paddingTop: '3rem',
+                display: ' flex',
+                justifyContent: 'center' /* Horizontally center the content */,
+                marginTop: '1rem',
+                flexDirection: 'row',
               }}
             >
-              {posts.posts && posts.posts.length > 0 ? (
-                <Box>
-                  {posts.posts.map((post) => (
-                    <PostItem key={post._id} post={post} />
-                  ))}
-                </Box>
-              ) : (
-                <Typography>Follow people to see their Memories</Typography>
-              )}
+              <Box
+                sx={{
+                  paddingBottom: '3rem',
+                  width: 500,
+                  alignContent: 'center',
+                }}
+              >
+                {posts.posts && posts.posts.length > 0 ? (
+                  <Box sx={{ height: 300 }}>
+                    {posts.posts.map((post) => (
+                      <PostItem key={post._id} post={post} />
+                    ))}
+                  </Box>
+                ) : (
+                  <Typography>Follow people to see their Memories</Typography>
+                )}
+              </Box>
             </Box>
           </Box>
 
