@@ -37,7 +37,7 @@ const userSchema = mongoose.Schema(
         ref: 'User',
       },
     ],
-    followin: [
+    following: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
