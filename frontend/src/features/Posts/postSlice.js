@@ -111,7 +111,7 @@ export const addComment = createAsyncThunk(
       const token = thunkAPI.getState().auth.user.token;
 
       const response = await fetch(
-        API_URL+'/'+'comment'+'/'+`${id}`,
+        `/api/posts/comment/${id}`,
         {
           method: 'PUT',
           headers: {
@@ -147,17 +147,14 @@ export const deleteComment = createAsyncThunk(
     try {
       const token = thunkAPI.getState().auth.user.token;
 
-      const response = await fetch(
-         API_URL+'comment'+'/'+`${id}`,
-        {
-          method: 'DELETE',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify({commentId:commentId}),
-        }
-      );
+      const response = await fetch(`/api/posts/comment/${id}${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ commentId: commentId }),
+      });
 
       const data = await response.json(); // Await 
       console.log(data);

@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux';
 
 
 import { deleteComment } from '../../features/Posts/postSlice';
- const API_USER = 'http://localhost:5000/api/users';
+//  const API_USER = 'http://localhost:5000/api/users';
 
 const CommentCard = ({
   userId, // the person who commented
@@ -20,7 +20,7 @@ const CommentCard = ({
   loggedInUser,
 }) => {
   const [userInComment, setUserInComment] = useState(null);
-  
+  // console.log(userId);
    const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
 
@@ -31,30 +31,57 @@ const CommentCard = ({
       commentId:commentId,
     }
 
-  await dispatch(deleteComment(commentData));
+   dispatch(deleteComment(commentData));
  
-   window.location.reload();
+  //  window.location.reload();
   };
+
+  
 
   useEffect(() => {
-    getData(userId);
+    getData();
    
-  }, [userId]);
+  }, []);
 
-  const getData = async () => {
-    const res = await fetch(
-      API_USER+`${userId}`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+  // const getData = async () => {
+  //   const res = await fetch(`/api/users${userId}`, {
+  //     headers: {
+  //       Authorization: `Bearer ${token}`,
+  //     },
+  //   });
+  //   const user = await res.json();
+  //   console.log(user);
+  //   setUserInComment(user);
+  //    setLoading(false); 
+ 
+  // };
+
+
+
+
+
+
+
+const getData = async () => {
+  try {
+    const res = await fetch(`/api/users/${userId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    if (!res.ok) {
+      throw new Error('Failed to fetch user data');
+    }
     const user = await res.json();
     setUserInComment(user);
-     setLoading(false); 
- 
-  };
+    setLoading(false);
+  } catch (error) {
+    console.error('Error fetching user data:', error);
+  }
+};
+
+
+
 
   if (loading) {
   
@@ -64,12 +91,23 @@ const CommentCard = ({
 
   return (
     <div className='commentUser'>
-      <img src={userInComment.profilePicture} alt={userInComment.name} />
+      {/* <img src={userInComment.profilePicture} alt={userInComment.name} />
       <Typography
         style={{ minWidth: '6vmax', fontWeight: 'bold', color: 'black' }}
       >
         {userInComment.name}
-      </Typography>
+      </Typography> */}
+
+      {userInComment && (
+        <>
+          <img src={userInComment.profilePicture} alt={userInComment.name} />
+          <Typography
+            style={{ minWidth: '6vmax', fontWeight: 'bold', color: 'black' }}
+          >
+            {userInComment.name}
+          </Typography>
+        </>
+      )}
 
       <Typography>{comment}</Typography>
       {loggedInUser === userId ? (
