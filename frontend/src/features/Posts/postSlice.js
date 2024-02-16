@@ -143,11 +143,11 @@ export const deleteComment = createAsyncThunk(
   'posts/deleteComment',
   async ( {id, commentId},thunkAPI) => {
     // console.log(id);
-    // console.log(value);
+    console.log(commentId);
     try {
       const token = thunkAPI.getState().auth.user.token;
 
-      const response = await fetch(`/api/posts/comment/${id}${id}`, {
+      const response = await fetch(`/api/posts/comment/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -170,6 +170,7 @@ export const deleteComment = createAsyncThunk(
     }
   }
 );
+
 
 
 
@@ -318,20 +319,7 @@ export const postSlice = createSlice({
       .addCase(deleteComment.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-
-      //  const{id,commentId}=action.payload;
-      
-      //      state.posts = state.posts.map((post) => {
-      //        if (post._id === id) {
-      //          post.comments = post.comments.filter(
-      //            (comment) => comment._id !== commentId
-      //          );
-      //        }
-      //        return post;
-      //         window.location.reload();
-      //      });
-        state.posts.comment = action.payload.comment;
-
+        state.message = action.payload;
           
            
          
