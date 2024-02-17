@@ -1,4 +1,4 @@
-import { Button, Typography } from '@mui/material';
+import {  Typography } from '@mui/material';
 import React,{useState,useEffect}from 'react';
 
 import './CommentCard.css';
@@ -43,18 +43,7 @@ const CommentCard = ({
    
   }, []);
 
-  // const getData = async () => {
-  //   const res = await fetch(`/api/users${userId}`, {
-  //     headers: {
-  //       Authorization: `Bearer ${token}`,
-  //     },
-  //   });
-  //   const user = await res.json();
-  //   console.log(user);
-  //   setUserInComment(user);
-  //    setLoading(false); 
- 
-  // };
+
 
 
 
@@ -91,34 +80,35 @@ const getData = async () => {
 
   return (
     <div className='commentUser'>
-      {/* <img src={userInComment.profilePicture} alt={userInComment.name} />
-      <Typography
-        style={{ minWidth: '6vmax', fontWeight: 'bold', color: 'black' }}
-      >
-        {userInComment.name}
-      </Typography> */}
-
       {userInComment && (
-        <>
+        <div className='user'>
           <img src={userInComment.profilePicture} alt={userInComment.name} />
           <Typography
             style={{ minWidth: '6vmax', fontWeight: 'bold', color: 'black' }}
           >
             {userInComment.name}
           </Typography>
-        </>
+          <Typography>{comment}</Typography>
+        </div>
       )}
 
-      <Typography>{comment}</Typography>
-      {loggedInUser === userId ? (
-        <Button onClick={deleteCommentHandle}>
-          <DeleteIcon />
-        </Button>
-      ) : loggedInUser === postUser ? (
-        <Button onClick={deleteCommentHandle}>
-          <DeleteIcon />
-        </Button>
-      ) : null}
+      <div>
+        {loggedInUser === userId ? (
+          <button
+           
+            onClick={deleteCommentHandle}
+          >
+            <DeleteIcon color='red' />
+          </button>
+        ) : (
+          <button
+           
+            onClick={deleteCommentHandle}
+          >
+            <DeleteIcon color='red' />
+          </button>
+        )}
+      </div>
     </div>
   );
 };

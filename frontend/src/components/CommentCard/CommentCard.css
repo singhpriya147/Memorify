@@ -1,6 +1,7 @@
 .commentUser {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   color: rgba(0, 0, 0, 0.507);
   background-color: #E8E9EB;
   border-radius: 3px;
@@ -21,4 +22,10 @@
 
 .commentUser > button {
   color: red;
+ 
+}
+.commentUser .user{
+  display: flex;
+  /* flex-direction: column; */
+   align-items: center;
 }

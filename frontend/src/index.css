@@ -22,7 +22,7 @@ button{
   color: #0e0d0d;
   cursor: pointer;
   display: inline-flex;
-  flex: 1 1 auto;
+  flex: 1 1 auto ;
   font-family: Inter,sans-serif;
   font-size: 0.8rem;
   font-weight: 700;
